@@ -1,0 +1,39 @@
+# バイナリファイル
+/bin/
+/pkg/
+
+# エディターの設定ファイル
+.vscode/
+.idea/
+
+# MacOSのシステムファイル
+.DS_Store
+
+# Windowsのシステムファイル
+Thumbs.db
+
+# ログファイル
+*.log
+
+# 依存関係のキャッシュ
+vendor/
+
+# テストの一時ファイル
+*.test
+*.out
+
+# ビルドした実行ファイル
+todo-list
+todo-list.exe
+
+# カバレッジファイル
+*.cover
+
+# ローカル環境設定ファイル
+.env
+.env.local
+
+# その他の一時ファイルやディレクトリ
+*.tmp
+*.temp
+*.swp
