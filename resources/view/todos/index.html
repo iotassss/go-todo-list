@@ -1,0 +1,33 @@
+{{define "content"}}
+  <h1>Welcome to My Website</h1>
+  <p>This is the home page.</p>
+  <!-- {{printf "%#v" .}} -->
+  <a href="/todos/new">New Todo</a>
+  <ul>
+    {{range .}}
+      <li>
+        <h3>{{.Title}}</h3>
+        <p>{{.Description}}</p>
+        {{if .Done}}
+          <p>DONE</p>
+        {{else}}
+          <p>WIP</p>
+        {{end}}
+        <!-- switch done -->
+        {{if .Done}}
+          <form action="/todos/{{.Id}}/undone" method="POST">
+            <input type="submit" value="未完了">
+          </form>
+        {{else}}
+          <form action="/todos/{{.Id}}/done" method="POST">
+            <input type="submit" value="完了">
+          </form>
+        {{end}}
+        <a href="/todos/{{.Id}}/edit">Edit</a>
+        <form action="/todos/{{.Id}}/delete" method="POST">
+          <input type="submit" value="削除">
+        </form>
+      </li>
+    {{end}}
+  </ul>
+{{end}}

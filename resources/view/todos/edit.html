@@ -1,0 +1,11 @@
+{{define "content"}}
+  <h1>Edit Todo</h1>
+  <form action="/todos/{{.Id}}/update" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    title: <input type="text" name="title" value="{{.Title}}">
+    <br>
+    description: <input type="text" name="description" value="{{.Description}}">
+    <br>
+    <input type="submit" value="更新">
+  </form>
+{{end}}
